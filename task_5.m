@@ -30,4 +30,4 @@ end
 meanDistance = mean(distances);
 
 % Output the result
-fprintf('The mean symmetric epipolar distance is %f\n', meanDistance);
+fprintf('The mean symmetric epipolar distance is %s\n', meanDistance);

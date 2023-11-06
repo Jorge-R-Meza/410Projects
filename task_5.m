@@ -4,7 +4,7 @@ load  pixelCoordinates.mat
 pts1 =  pixelCoords2.';
 pts2 =  pixelCoords1.';
 
-%run("eightpoint.m")
+%run("wrongfunc_4.m")
 run("task_4.m")
 N = size(pts1, 1); % Number of point pairs
 distances = zeros(N, 1); 

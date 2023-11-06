@@ -77,30 +77,7 @@ end
 hold(ax2, 'off');
 save('pixelCoordinates.mat', 'pixelCoords1', 'pixelCoords2');
 
-%... [rest of your code]
-%{
-% Display the first image and overlay the 2D points
-figure; % <- This line opens a new figure
-imshow(image1);
-hold on;
-plot(pixelCoords1(1, :), pixelCoords1(2, :), 'go');
-% Label the points
-for i = 1:size(pixelCoords1, 2)
-    text(pixelCoords1(1, i), pixelCoords1(2, i), num2str(i), 'Color', 'red');
-end
-hold off;
 
-% Display the second image and overlay the 2D points
-figure; % <- This line opens another new figure
-imshow(image2);
-hold on;
-plot(pixelCoords2(1, :), pixelCoords2(2, :), 'go');
-% Label the points
-for i = 1:size(pixelCoords2, 2)
-    text(pixelCoords2(1, i), pixelCoords2(2, i), num2str(i), 'Color', 'red');
-end
-hold off;
-%}
 
 
 

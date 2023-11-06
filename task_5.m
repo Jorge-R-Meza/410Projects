@@ -14,16 +14,17 @@ for i = 1:N
     point2 = [pts2(i, :) 1]';
     
     % Epipolar lines
-    line1 = fLMedS* point1;
-    line2 = fLMedS* point2;
+    line1 = F * point1; % Line in the second image for point1
+    line2 = F' * point2; % Line in the first image for point2
     
     % Calculate the distances from points to the corresponding epipolar lines
-    d1 = (line1' * point2)^2 / (line1(1)^2 + line1(2)^2);
-    d2 = (line2' * point1)^2 / (line2(1)^2 + line2(2)^2);
+    d1 = ((line1(1) * point2(1) + line1(2) * point2(2) + line1(3)))^2 / (line1(1)^2 + line1(2)^2);
+    d2 = ((line2(1) * point1(1) + line2(2) * point1(2) + line2(3)))^2 / (line2(1)^2 + line2(2)^2);
     
     % Symmetric epipolar distance
     distances(i) = d1 + d2;
 end
+
 
 % Compute the mean of the squared distances
 meanDistance = mean(distances);
